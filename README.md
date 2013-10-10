@@ -31,17 +31,17 @@ Main Features
 
 Documentation
 =============
-Installation:
+**Installation:**
 
 Add the files to the corresponding directories. Then, dump the sql file to your database.
 Open the auth_model.php file which is located in the Application/models directory. Make sure to edit the settings to match your desire.
 
-Load the model using Codeigniter's load function:
+Load the model using Codeigniter's load function in your controller:
 ```PHP
 $this->load->model('auth_model');
 ```
 
-Creating an account:
+**Creating an account:**
 
 To create an account simply use the create_account() function. Example:
 ```PHP
@@ -57,7 +57,7 @@ $user_id = $this->auth_model->create_account($email, $password, NULL, $custom_da
 ```
 If you want the account to be connected to a group, add the group id as a 3rd paramater.
 
-Logging In:
+**Logging In:**
 
 Log a user in using the login() function. Example:
 ```PHP
