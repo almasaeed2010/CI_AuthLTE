@@ -4,35 +4,38 @@ if (!defined('BASEPATH'))
     exit('No direct script access allowed');
 
 /**
- * @Author: Abdullah A Almsaeed
- * @Date: Sep 23, 2013
+ * @Author Abdullah A Almsaeed <almasaeed2010@hotmail.com>
+ * @Date Sep 23, 2013
  * @link https://github.com/almasaeed2010/CI_AuthLTE Documentation and download link
- * @Abstract:
+ * @version v0.1.0
+ * @Abstract
  *  Authorization Library. Controls all authintication processes such as login,
  *      logout and registering new users
  *  Main features:
- *      1- PHPass for password encryption
- *      2- Limited login attempts
- *      3- Secured remember me with limited time period
- *      4- Forgetton password help
- *      5- Optional activation email
- *      6- Groups and priviledges control
+ * <ol>
+ *      <li> PHPass for password encryption
+ *      <li> Limited login attempts
+ *      <li> Secured remember me with limited time period
+ *      <li> Forgetton password help
+ *      <li> Optional activation email
+ *      <li> Groups and priviledges control
+ * </ol>
  * @license http://opensource.org/licenses/MIT MIT
  *
- * The MIT License (MIT)
- *
  * @Copyright (c) 2013 Almsaeed
- *
+ * <br/>
+ * The MIT License (MIT)
+ * <br/>
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
  * in the Software without restriction, including without limitation the rights
  * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
  * copies of the Software, and to permit persons to whom the Software is
  * furnished to do so, subject to the following conditions:
- *
+ * <br/>
  * The above copyright notice and this permission notice shall be included in
  * all copies or substantial portions of the Software.
- *
+ * <br/>
  * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
  * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
  * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -700,25 +703,25 @@ class Auth_model extends CI_Model {
         $this->db->select('email');
         $this->db->where('user_id', $user_id);
         $query = $this->db->get('accounts');
-        if($query->num_rows() != 1) {
+        if ($query->num_rows() != 1) {
             //User does not exist
             return FALSE;
         }
-        
+
         //Fetch data
         $row = $query->row();
-        
+
         //Generate token
         $token = $this->_generate_email_verfication_token($user_id);
-        
+
         //URL Helper
         $this->load->helper('url');
-        
+
         //create link
         $link = $this->settings['links']['email_verification']
                 . "/{$user_id}/{$token}";
         $data['link'] = site_url($link);
-        
+
         //email configration        
         $this->load->library('email');
         $from = $this->settings['webmaster_email'];
@@ -740,9 +743,8 @@ class Auth_model extends CI_Model {
         $this->email->send();
 
         return TRUE;
-        
     }
-    
+
     /**
      * Generate email verification token
      * @param int $user_id The user id
@@ -750,17 +752,17 @@ class Auth_model extends CI_Model {
      */
     private function _generate_email_verfication_token($user_id) {
         $token = $this->_rand_str(32);
-        
+
         $this->load->library('phpass');
         $encrypted_token = $this->phpass->hash($token);
         $this->db->set('email_verification_tk', $encrypted_token);
         $this->db->set('email_verification_date', 'NOW()');
         $this->db->where('user_id', $user_id);
         $this->db->update('accounts');
-        
+
         return $token;
     }
-    
+
     /**
      * Verify that the user clicked a valid verification email link.     
      * @param int $user_id
@@ -774,15 +776,15 @@ class Auth_model extends CI_Model {
         $this->db->select('email_verfication_tk AS token, email_verfication_date AS date');
         $this->db->where('user_id', $user_id);
         $query = $this->db->get('accounts');
-        
-        if($query->num_rows() != 1) {
+
+        if ($query->num_rows() != 1) {
             //Invalid user id
             return FALSE;
         }
-        
+
         //Fetch user data
         $row = $query->row();
-        
+
         //Check token expiration date
         $now = new DateTime('now');
         $tk_date = new DateTime($row->date);
@@ -792,15 +794,14 @@ class Auth_model extends CI_Model {
             //Token has expired
             return FALSE;
         }
-        
+
         //Load phpass
         $this->load->library('phpass');
         //Check token
-        if(!$this->phpass->check($token, $row->token)) {
+        if (!$this->phpass->check($token, $row->token)) {
             //Invalid token
         }
     }
-
 
     /**
      * Reset user password
@@ -853,7 +854,8 @@ class Auth_model extends CI_Model {
 
         $now = new DateTime('now');
         $tk_date = new DateTime($row->reset_password_tk_date);
-        $tk_date->modify("+{$this->settings['password_reset_date_limit']} SECONDS");;
+        $tk_date->modify("+{$this->settings['password_reset_date_limit']} SECONDS");
+        ;
 
         if ($tk_date >= $now) {
             //Token has expired
@@ -1372,38 +1374,46 @@ class Auth_model extends CI_Model {
      * ----------------
      * This function should be used only once.
      * It inserts initial data to the DB. The values are the following:
-     *  -Groups:
-     *      -name: admin
-     *      -description: controls website content and members
-     *      -name: user
-     *      -description: a website public member
-     *  -Privileges:
-     *      Admin group privileges:
-     *      -name: Edit profiles
-     *      -description: Edit user profiles
-     *      -name: Add account
-     *      -description: Add new admin or user
-     *      -name: Add group
-     *      -description: Add new group and privileges
-     *      -name: Edit group
-     *      -description: Edit groups and privileges
-     *      -name: Connect groups
-     *      -description: Connect user to groups and priviliges
-     *
-     *  -Account:
-     *      *
-     *      -email: admin@example.com
-     *      -password: demo_password
-     *      -group: admin
-     *      *
-     *      -email: user@emaple.com
-     *      -password: demo_password
-     *      -group: user
-     *
-     *
-     *
+     * <ul>
+     *  <li>Groups:
+     *      <ul>
+     *      <li>name: admin
+     *      <li>description: controls website content and members
+     *      <li>name: user
+     *      <li>description: a website public member
+     *      </ul>
+     *  <li>Privileges:
+     *      <ul>
+     *      <li>Admin group privileges:
+     *          <ul>     
+     *          <li>name: Edit profiles
+     *          <li>description: Edit user profiles
+     *          <li>name: Add account
+     *          <li>description: Add new admin or user
+     *          <li>name: Add group
+     *          <li>description: Add new group and privileges
+     *          <li>name: Edit group
+     *          <li>description: Edit groups and privileges
+     *          <li>name: Connect groups
+     *          <li>description: Connect user to groups and priviliges
+     *          </ul>
+     *      </ul>
+     *  <li>Account:
+     *      <ul>
+     *      <li>email: admin@example.com
+     *      <li>password: demo_password
+     *      <li>group: admin
+     *      </ul>
+     *      <ul>
+     *      <li>email: user@emaple.com
+     *      <li>password: demo_password
+     *      <li>group: user
+     *      </ul>
+     * </ul>
+     * <p>
      * The function connects the privileges to the group admin
-     * Note: You must use the SQL_dump file first before using this function
+     * <b>Note:</b> You must use the SQL_dump file first before using this function
+     * </p>
      * @return boolean
      */
     public function install() {

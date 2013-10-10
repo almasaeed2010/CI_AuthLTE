@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="generator" content="ApiGen 2.8.0" />
+	<meta name="robots" content="noindex" />
+
+	<title>File libraries/phpass.php</title>
+
+	<script type="text/javascript" src="resources/combined.js?3407503710"></script>
+	<script type="text/javascript" src="elementlist.js?3163743183"></script>
+	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?3505392360" />
+
+</head>
+
+<body>
+<div id="left">
+	<div id="menu">
+		<a href="index.html" title="Overview"><span>Overview</span></a>
+
+
+		<div id="groups">
+		</div>
+
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li><a href="class-Auth_model.html">Auth_model</a></li>
+				<li><a href="class-PasswordHash.html">PasswordHash</a></li>
+				<li class="active"><a href="class-Phpass.html">Phpass</a></li>
+			</ul>
+
+
+
+
+
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+<div id="rightInner">
+	<form id="search">
+		<input type="hidden" name="cx" value="" />
+		<input type="hidden" name="ie" value="UTF-8" />
+		<input type="text" name="q" class="text" />
+		<input type="submit" value="Search" />
+	</form>
+
+	<div id="navigation">
+		<ul>
+			<li>
+				<a href="index.html" title="Overview"><span>Overview</span></a>
+			</li>
+			<li>
+				<a href="class-Phpass.html" title="Summary of Phpass"><span>Class</span></a>
+			</li>
+		</ul>
+		<ul>
+			<li>
+				<a href="tree.html" title="Tree view of classes, interfaces, traits and exceptions"><span>Tree</span></a>
+			</li>
+		</ul>
+		<ul>
+		</ul>
+	</div>
+
+<pre><code><span id="1" class="l"><a class="l" href="#1">  1: </a><span class="xlang">&lt;?php</span>
+</span><span id="2" class="l"><a class="l" href="#2">  2: </a><span class="php-comment">/**
+</span></span><span id="3" class="l"><a class="l" href="#3">  3: </a><span class="php-comment"> * @name        CodeIgniter phpass Library
+</span></span><span id="4" class="l"><a class="l" href="#4">  4: </a><span class="php-comment"> * @author      Jens Segers
+</span></span><span id="5" class="l"><a class="l" href="#5">  5: </a><span class="php-comment"> * @link        http://www.jenssegers.be
+</span></span><span id="6" class="l"><a class="l" href="#6">  6: </a><span class="php-comment"> * @license     MIT License Copyright (c) 2012 Jens Segers
+</span></span><span id="7" class="l"><a class="l" href="#7">  7: </a><span class="php-comment"> * 
+</span></span><span id="8" class="l"><a class="l" href="#8">  8: </a><span class="php-comment"> * Permission is hereby granted, free of charge, to any person obtaining a copy
+</span></span><span id="9" class="l"><a class="l" href="#9">  9: </a><span class="php-comment"> * of this software and associated documentation files (the &quot;Software&quot;), to deal
+</span></span><span id="10" class="l"><a class="l" href="#10"> 10: </a><span class="php-comment"> * in the Software without restriction, including without limitation the rights
+</span></span><span id="11" class="l"><a class="l" href="#11"> 11: </a><span class="php-comment"> * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+</span></span><span id="12" class="l"><a class="l" href="#12"> 12: </a><span class="php-comment"> * copies of the Software, and to permit persons to whom the Software is
+</span></span><span id="13" class="l"><a class="l" href="#13"> 13: </a><span class="php-comment"> * furnished to do so, subject to the following conditions:
+</span></span><span id="14" class="l"><a class="l" href="#14"> 14: </a><span class="php-comment"> * 
+</span></span><span id="15" class="l"><a class="l" href="#15"> 15: </a><span class="php-comment"> * The above copyright notice and this permission notice shall be included in
+</span></span><span id="16" class="l"><a class="l" href="#16"> 16: </a><span class="php-comment"> * all copies or substantial portions of the Software.
+</span></span><span id="17" class="l"><a class="l" href="#17"> 17: </a><span class="php-comment"> * 
+</span></span><span id="18" class="l"><a class="l" href="#18"> 18: </a><span class="php-comment"> * THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+</span></span><span id="19" class="l"><a class="l" href="#19"> 19: </a><span class="php-comment"> * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+</span></span><span id="20" class="l"><a class="l" href="#20"> 20: </a><span class="php-comment"> * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+</span></span><span id="21" class="l"><a class="l" href="#21"> 21: </a><span class="php-comment"> * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+</span></span><span id="22" class="l"><a class="l" href="#22"> 22: </a><span class="php-comment"> * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+</span></span><span id="23" class="l"><a class="l" href="#23"> 23: </a><span class="php-comment"> * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+</span></span><span id="24" class="l"><a class="l" href="#24"> 24: </a><span class="php-comment"> * THE SOFTWARE.
+</span></span><span id="25" class="l"><a class="l" href="#25"> 25: </a><span class="php-comment"> */</span>
+</span><span id="26" class="l"><a class="l" href="#26"> 26: </a>
+</span><span id="27" class="l"><a class="l" href="#27"> 27: </a><span class="php-keyword1">if</span> (!<span class="php-keyword2">defined</span>(<span class="php-quote">&quot;BASEPATH&quot;</span>))
+</span><span id="28" class="l"><a class="l" href="#28"> 28: </a>    <span class="php-keyword1">exit</span>(<span class="php-quote">&quot;No direct script access allowed&quot;</span>);
+</span><span id="29" class="l"><a class="l" href="#29"> 29: </a>
+</span><span id="30" class="l"><a class="l" href="#30"> 30: </a><span class="php-keyword1">class</span> <a id="Phpass" href="#Phpass">Phpass</a> {
+</span><span id="31" class="l"><a class="l" href="#31"> 31: </a>    
+</span><span id="32" class="l"><a class="l" href="#32"> 32: </a>    <span class="php-keyword1">protected</span> <span class="php-var"><a id="$PasswordHash" href="#$PasswordHash">$PasswordHash</a></span>;
+</span><span id="33" class="l"><a class="l" href="#33"> 33: </a>    
+</span><span id="34" class="l"><a class="l" href="#34"> 34: </a>    <span class="php-comment">// default values if config was not found</span>
+</span><span id="35" class="l"><a class="l" href="#35"> 35: </a>    <span class="php-keyword1">protected</span> <span class="php-var"><a id="$iteration_count_log2" href="#$iteration_count_log2">$iteration_count_log2</a></span> = <span class="php-num">8</span>;
+</span><span id="36" class="l"><a class="l" href="#36"> 36: </a>    <span class="php-keyword1">protected</span> <span class="php-var"><a id="$portable_hashes" href="#$portable_hashes">$portable_hashes</a></span> = <span class="php-keyword1">FALSE</span>;
+</span><span id="37" class="l"><a class="l" href="#37"> 37: </a>    
+</span><span id="38" class="l"><a class="l" href="#38"> 38: </a>    <span class="php-comment">/**
+</span></span><span id="39" class="l"><a class="l" href="#39"> 39: </a><span class="php-comment">     * Construct with configuration array
+</span></span><span id="40" class="l"><a class="l" href="#40"> 40: </a><span class="php-comment">     * 
+</span></span><span id="41" class="l"><a class="l" href="#41"> 41: </a><span class="php-comment">     * @param array $config
+</span></span><span id="42" class="l"><a class="l" href="#42"> 42: </a><span class="php-comment">     */</span>
+</span><span id="43" class="l"><a class="l" href="#43"> 43: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="___construct" href="#___construct">__construct</a>(<span class="php-var">$config</span> = <span class="php-keyword1">array</span>()) {
+</span><span id="44" class="l"><a class="l" href="#44"> 44: </a>        <span class="php-comment">// check if the original phpass file exists</span>
+</span><span id="45" class="l"><a class="l" href="#45"> 45: </a>        <span class="php-keyword1">if</span> (!<span class="php-keyword2">file_exists</span>(<span class="php-var">$path</span> = <span class="php-keyword2">dirname</span>(__FILE__) . <span class="php-quote">'/../libraries/PasswordHash.php'</span>)) {
+</span><span id="46" class="l"><a class="l" href="#46"> 46: </a>            show_error(<span class="php-quote">'The phpass class file was not found.'</span>);
+</span><span id="47" class="l"><a class="l" href="#47"> 47: </a>        }
+</span><span id="48" class="l"><a class="l" href="#48"> 48: </a>        
+</span><span id="49" class="l"><a class="l" href="#49"> 49: </a>        <span class="php-keyword1">include</span> (<span class="php-var">$path</span>);
+</span><span id="50" class="l"><a class="l" href="#50"> 50: </a>        
+</span><span id="51" class="l"><a class="l" href="#51"> 51: </a>        <span class="php-keyword1">if</span> (!<span class="php-keyword1">empty</span>(<span class="php-var">$config</span>)) {
+</span><span id="52" class="l"><a class="l" href="#52"> 52: </a>            <span class="php-var">$this</span>-&gt;initialize(<span class="php-var">$config</span>);
+</span><span id="53" class="l"><a class="l" href="#53"> 53: </a>        }
+</span><span id="54" class="l"><a class="l" href="#54"> 54: </a>        
+</span><span id="55" class="l"><a class="l" href="#55"> 55: </a>        <span class="php-comment">// create phpass object</span>
+</span><span id="56" class="l"><a class="l" href="#56"> 56: </a>        <span class="php-var">$this</span>-&gt;PasswordHash = <span class="php-keyword1">new</span> PasswordHash(<span class="php-var">$this</span>-&gt;iteration_count_log2, <span class="php-var">$this</span>-&gt;portable_hashes);
+</span><span id="57" class="l"><a class="l" href="#57"> 57: </a>    }
+</span><span id="58" class="l"><a class="l" href="#58"> 58: </a>    
+</span><span id="59" class="l"><a class="l" href="#59"> 59: </a>    <span class="php-comment">/**
+</span></span><span id="60" class="l"><a class="l" href="#60"> 60: </a><span class="php-comment">     * Initialize with configuration array
+</span></span><span id="61" class="l"><a class="l" href="#61"> 61: </a><span class="php-comment">     * 
+</span></span><span id="62" class="l"><a class="l" href="#62"> 62: </a><span class="php-comment">     * @param array $config
+</span></span><span id="63" class="l"><a class="l" href="#63"> 63: </a><span class="php-comment">     */</span>
+</span><span id="64" class="l"><a class="l" href="#64"> 64: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_initialize" href="#_initialize">initialize</a>(<span class="php-var">$config</span> = <span class="php-keyword1">array</span>()) {
+</span><span id="65" class="l"><a class="l" href="#65"> 65: </a>        <span class="php-keyword1">foreach</span> (<span class="php-var">$config</span> <span class="php-keyword1">as</span> <span class="php-var">$key</span> =&gt; <span class="php-var">$val</span>) {
+</span><span id="66" class="l"><a class="l" href="#66"> 66: </a>            <span class="php-keyword1">if</span> (<span class="php-var">$key</span> != <span class="php-quote">'PasswordHash'</span>) {
+</span><span id="67" class="l"><a class="l" href="#67"> 67: </a>                <span class="php-var">$this</span>-&gt;{<span class="php-var">$key</span>} = <span class="php-var">$val</span>;
+</span><span id="68" class="l"><a class="l" href="#68"> 68: </a>            }
+</span><span id="69" class="l"><a class="l" href="#69"> 69: </a>        }
+</span><span id="70" class="l"><a class="l" href="#70"> 70: </a>    }
+</span><span id="71" class="l"><a class="l" href="#71"> 71: </a>    
+</span><span id="72" class="l"><a class="l" href="#72"> 72: </a>    <span class="php-comment">/**
+</span></span><span id="73" class="l"><a class="l" href="#73"> 73: </a><span class="php-comment">     * Alias method for HashPassword
+</span></span><span id="74" class="l"><a class="l" href="#74"> 74: </a><span class="php-comment">     */</span>
+</span><span id="75" class="l"><a class="l" href="#75"> 75: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <span class="php-keyword2">hash</span>(<span class="php-var">$password</span>) {
+</span><span id="76" class="l"><a class="l" href="#76"> 76: </a>        <span class="php-keyword1">return</span> <span class="php-var">$this</span>-&gt;PasswordHash-&gt;HashPassword(<span class="php-var">$password</span>);
+</span><span id="77" class="l"><a class="l" href="#77"> 77: </a>    }
+</span><span id="78" class="l"><a class="l" href="#78"> 78: </a>    
+</span><span id="79" class="l"><a class="l" href="#79"> 79: </a>    <span class="php-comment">/**
+</span></span><span id="80" class="l"><a class="l" href="#80"> 80: </a><span class="php-comment">     * Alias method for CheckPassword
+</span></span><span id="81" class="l"><a class="l" href="#81"> 81: </a><span class="php-comment">     */</span>
+</span><span id="82" class="l"><a class="l" href="#82"> 82: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_check" href="#_check">check</a>(<span class="php-var">$password</span>, <span class="php-var">$stored_hash</span>) {
+</span><span id="83" class="l"><a class="l" href="#83"> 83: </a>        <span class="php-keyword1">return</span> <span class="php-var">$this</span>-&gt;PasswordHash-&gt;CheckPassword(<span class="php-var">$password</span>, <span class="php-var">$stored_hash</span>);
+</span><span id="84" class="l"><a class="l" href="#84"> 84: </a>    }
+</span><span id="85" class="l"><a class="l" href="#85"> 85: </a>    
+</span><span id="86" class="l"><a class="l" href="#86"> 86: </a>    <span class="php-comment">/**
+</span></span><span id="87" class="l"><a class="l" href="#87"> 87: </a><span class="php-comment">     * Magic call method that passes every call to the phpass object
+</span></span><span id="88" class="l"><a class="l" href="#88"> 88: </a><span class="php-comment">     * 
+</span></span><span id="89" class="l"><a class="l" href="#89"> 89: </a><span class="php-comment">     * @return mixed
+</span></span><span id="90" class="l"><a class="l" href="#90"> 90: </a><span class="php-comment">     */</span>
+</span><span id="91" class="l"><a class="l" href="#91"> 91: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="___call" href="#___call">__call</a>(<span class="php-var">$name</span>, <span class="php-var">$arguments</span>) {
+</span><span id="92" class="l"><a class="l" href="#92"> 92: </a>        <span class="php-keyword1">return</span> <span class="php-keyword2">call_user_func_array</span>(<span class="php-keyword1">array</span>(<span class="php-var">$this</span>-&gt;PasswordHash, <span class="php-var">$name</span>), <span class="php-var">$arguments</span>);
+</span><span id="93" class="l"><a class="l" href="#93"> 93: </a>    }
+</span><span id="94" class="l"><a class="l" href="#94"> 94: </a>    
+</span><span id="95" class="l"><a class="l" href="#95"> 95: </a>    <span class="php-comment">/**
+</span></span><span id="96" class="l"><a class="l" href="#96"> 96: </a><span class="php-comment">     * Magic get method that passes every property request to the phpass object
+</span></span><span id="97" class="l"><a class="l" href="#97"> 97: </a><span class="php-comment">     * 
+</span></span><span id="98" class="l"><a class="l" href="#98"> 98: </a><span class="php-comment">     * @return mixed
+</span></span><span id="99" class="l"><a class="l" href="#99"> 99: </a><span class="php-comment">     */</span>
+</span><span id="100" class="l"><a class="l" href="#100">100: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="___get" href="#___get">__get</a>(<span class="php-var">$name</span>) {
+</span><span id="101" class="l"><a class="l" href="#101">101: </a>        <span class="php-keyword1">return</span> <span class="php-var">$this</span>-&gt;PasswordHash-&gt;{<span class="php-var">$name</span>};
+</span><span id="102" class="l"><a class="l" href="#102">102: </a>    }
+</span><span id="103" class="l"><a class="l" href="#103">103: </a>
+</span><span id="104" class="l"><a class="l" href="#104">104: </a></span>}</code></pre>
+
+	<div id="footer">
+		 API documentation generated by <a href="http://apigen.org">ApiGen 2.8.0</a>
+	</div>
+</div>
+</div>
+</body>
+</html>

@@ -7,11 +7,11 @@ CI_AuthLTE is a light authentication library for codeigniter 2.x.
 
 Dependencies
 ============
-PHP 5.3 or higher
+[PHP 5.3](http://php.net) or higher
 
-Codeigniter 2.x or higher
+[Codeigniter 2.x](http://ellislab.com/codeigniter) or higher
 
-MySQL database
+[MySQL database](http://www.mysql.com)
 
 Main Features
 =============

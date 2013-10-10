@@ -1,0 +1,1972 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="generator" content="ApiGen 2.8.0" />
+
+	<title>Class Auth_model</title>
+
+	<script type="text/javascript" src="resources/combined.js?3407503710"></script>
+	<script type="text/javascript" src="elementlist.js?3163743183"></script>
+	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?3505392360" />
+
+</head>
+
+<body>
+<div id="left">
+	<div id="menu">
+		<a href="index.html" title="Overview"><span>Overview</span></a>
+
+
+		<div id="groups">
+		</div>
+
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li class="active"><a href="class-Auth_model.html">Auth_model</a></li>
+				<li><a href="class-PasswordHash.html">PasswordHash</a></li>
+				<li><a href="class-Phpass.html">Phpass</a></li>
+			</ul>
+
+
+
+
+
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+<div id="rightInner">
+	<form id="search">
+		<input type="hidden" name="cx" value="" />
+		<input type="hidden" name="ie" value="UTF-8" />
+		<input type="text" name="q" class="text" />
+		<input type="submit" value="Search" />
+	</form>
+
+	<div id="navigation">
+		<ul>
+			<li>
+				<a href="index.html" title="Overview"><span>Overview</span></a>
+			</li>
+			<li class="active">
+<span>Class</span>			</li>
+		</ul>
+		<ul>
+			<li>
+				<a href="tree.html" title="Tree view of classes, interfaces, traits and exceptions"><span>Tree</span></a>
+			</li>
+		</ul>
+		<ul>
+		</ul>
+	</div>
+
+<div id="content" class="class">
+	<h1>Class Auth_model</h1>
+
+
+
+	<dl class="tree">
+		<dd style="padding-left:0px">
+CI_Model
+			
+			
+		</dd>
+		<dd style="padding-left:30px">
+			<img src="resources/inherit.png" alt="Extended by" />
+<b><span>Auth_model</span></b>			
+			
+			
+		</dd>
+	</dl>
+
+
+
+
+
+
+
+
+	<div class="info">
+		
+		
+		
+		
+
+				<b>License:</b>
+				<a href="http://opensource.org/licenses/MIT">MIT</a><br />
+				<b>Version:</b>
+				v0.1.0<br />
+				<b>Link:</b>
+				<a href="https://github.com/almasaeed2010/CI_AuthLTE">Documentation and download link</a><br />
+				<b>Abstract:</b>
+				Authorization Library. Controls all authintication processes such as login,
+logout and registering new users Main features:
+<ol>
+	<li>PHPass for password encryption</li>
+
+	<li>Limited login attempts</li>
+
+	<li>Secured remember me with limited time period</li>
+
+	<li>Forgetton password help</li>
+
+	<li>Optional activation email</li>
+
+	<li>Groups and priviledges control</li>
+</ol>
+<br />
+				<b>Author:</b>
+				Abdullah A Almsaeed &lt;<a
+href="mailto:almasaeed2010&#64;hotmail.com">almasaeed2010&#64;<!---->hotmail.com</a>&gt;<br />
+				<b>Copyright:</b>
+				(c) 2013 Almsaeed<br />
+The MIT License (MIT)<br />
+Permission is hereby granted, free of charge, to any person obtaining a copy of
+this software and associated documentation files (the "Software"), to deal in
+the Software without restriction, including without limitation the rights to
+use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
+the Software, and to permit persons to whom the Software is furnished to do so,
+subject to the following conditions:<br />
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.<br />
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
+IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.<br />
+				<b>Date:</b>
+				Sep 23, 2013<br />
+		<b>Located at</b> <a href="source-class-Auth_model.html#6-1509" title="Go to source code">models/auth_model.php</a><br />
+	</div>
+
+
+
+	<table class="summary" id="methods">
+	<caption>Methods summary</caption>
+	<tr data-order="__construct" id="___construct">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#___construct">#</a>
+		<code><a href="source-class-Auth_model.html#60-117" title="Go to source code">__construct</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="create_account" id="_create_account">
+
+		<td class="attributes"><code>
+			 public 
+			mixed
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_create_account">#</a>
+		<code><a href="source-class-Auth_model.html#119-180" title="Go to source code">create_account</a>( <span>string <var>$email</var></span>, <span>string <var>$password</var></span>, <span>integer <var>$group_id</var> = <span class="php-keyword1">NULL</span></span>, <span>mixed <var>$custom_data</var> = <span class="php-keyword1">NULL</span></span> )</code>
+
+		<div class="description short">
+			
+<p>Create new user account</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Create new user account</p>
+
+<p>$custom_data example</p>
+
+<p>$custom_data = array("column" =&gt; "value", "column2" =&gt; "value2");</p>
+
+<p>To activate a user immedietly add this to your custom data array</p>
+
+<p>$custom_data = array("is_active" =&gt; 1);</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$email</var></dt>
+					<dd><code>string</code><br>$email</dd>
+					<dt><var>$password</var></dt>
+					<dd><code>string</code><br>$password</dd>
+					<dt><var>$group_id</var></dt>
+					<dd><code>integer</code><br>$group_id</dd>
+					<dt><var>$custom_data</var></dt>
+					<dd><code>mixed</code><br>$custom_data</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>mixed</code><br>user_id on success or FALSE otherwise<br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="activate" id="_activate">
+
+		<td class="attributes"><code>
+			 public 
+			integer
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_activate">#</a>
+		<code><a href="source-class-Auth_model.html#182-198" title="Go to source code">activate</a>( <span>integer <var>$user_id</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Activate user account</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Activate user account</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$user_id</var></dt>
+					<dd><code>integer</code><br>$user_id</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>integer</code><br>number of affected rows<br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="deactivate_account" id="_deactivate_account">
+
+		<td class="attributes"><code>
+			 public 
+			integer
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_deactivate_account">#</a>
+		<code><a href="source-class-Auth_model.html#200-211" title="Go to source code">deactivate_account</a>( <span>integer <var>$user_id</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Deactivate user account</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Deactivate user account</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$user_id</var></dt>
+					<dd><code>integer</code><br>$user_id</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>integer</code><br>affected rows<br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="edit_user" id="_edit_user">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_edit_user">#</a>
+		<code><a href="source-class-Auth_model.html#213-229" title="Go to source code">edit_user</a>( <span>integer <var>$user_id</var></span>, <span>array <var>$data</var> = <span class="php-keyword1">array</span>()</span> )</code>
+
+		<div class="description short">
+			
+<p>Edit user custom data $data example: $data = array('email' =&gt;
+'value@example.com', 'column' =&gt; 'value');</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Edit user custom data $data example: $data = array('email' =&gt;
+'value@example.com', 'column' =&gt; 'value');</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$user_id</var></dt>
+					<dd><code>integer</code><br>$user_id</dd>
+					<dt><var>$data</var></dt>
+					<dd><code>array</code><br>$data</dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="login" id="_login">
+
+		<td class="attributes"><code>
+			 public 
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_login">#</a>
+		<code><a href="source-class-Auth_model.html#231-313" title="Go to source code">login</a>( <span>string <var>$email</var></span>, <span>string <var>$password</var></span>, <span>boolean <var>$remember_me</var> = <span class="php-keyword1">FALSE</span></span> )</code>
+
+		<div class="description short">
+			
+<p>Perform login operation</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Perform login operation</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$email</var></dt>
+					<dd><code>string</code><br>$email</dd>
+					<dt><var>$password</var></dt>
+					<dd><code>string</code><br>$password</dd>
+					<dt><var>$remember_me</var></dt>
+					<dd><code>boolean</code><br>$remember_me</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>boolean</code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="is_logged_in" id="_is_logged_in">
+
+		<td class="attributes"><code>
+			 public 
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_is_logged_in">#</a>
+		<code><a href="source-class-Auth_model.html#365-382" title="Go to source code">is_logged_in</a>( )</code>
+
+		<div class="description short">
+			
+<p>Check if user is logged in. The function will check if the user is remembered
+only if the user is not logged in.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Check if user is logged in. The function will check if the user is remembered
+only if the user is not logged in.</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>boolean</code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="is_remembered" id="_is_remembered">
+
+		<td class="attributes"><code>
+			 public 
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_is_remembered">#</a>
+		<code><a href="source-class-Auth_model.html#384-444" title="Go to source code">is_remembered</a>( )</code>
+
+		<div class="description short">
+			
+<p>Checks for remember me cookie and match against database</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Checks for remember me cookie and match against database</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>boolean</code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="is_logged_in_via_password" id="_is_logged_in_via_password">
+
+		<td class="attributes"><code>
+			 public 
+			mixed
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_is_logged_in_via_password">#</a>
+		<code><a href="source-class-Auth_model.html#446-452" title="Go to source code">is_logged_in_via_password</a>( )</code>
+
+		<div class="description short">
+			
+<p>Check if user has logged in via password</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Check if user has logged in via password</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>mixed</code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="user_id" id="_user_id">
+
+		<td class="attributes"><code>
+			 public 
+			False
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_user_id">#</a>
+		<code><a href="source-class-Auth_model.html#454-460" title="Go to source code">user_id</a>( )</code>
+
+		<div class="description short">
+			
+<p>Returns the user id of the logged in user</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Returns the user id of the logged in user</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>False</code><br>if user is not logged in | (int) ID otherwise<br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="is_admin" id="_is_admin">
+
+		<td class="attributes"><code>
+			 public 
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_is_admin">#</a>
+		<code><a href="source-class-Auth_model.html#462-468" title="Go to source code">is_admin</a>( )</code>
+
+		<div class="description short">
+			
+<p>check if user is logged in and is admin</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>check if user is logged in and is admin</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>boolean</code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="session_data" id="_session_data">
+
+		<td class="attributes"><code>
+			 public 
+			mixed
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_session_data">#</a>
+		<code><a href="source-class-Auth_model.html#470-476" title="Go to source code">session_data</a>( )</code>
+
+		<div class="description short">
+			
+<p>Get all session data</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Get all session data</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>mixed</code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="logout" id="_logout">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_logout">#</a>
+		<code><a href="source-class-Auth_model.html#478-487" title="Go to source code">logout</a>( )</code>
+
+		<div class="description short">
+			
+<p>Perform logout operation</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Perform logout operation</p>
+
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="login_attempts" id="_login_attempts">
+
+		<td class="attributes"><code>
+			 public 
+			integer
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_login_attempts">#</a>
+		<code><a href="source-class-Auth_model.html#489-505" title="Go to source code">login_attempts</a>( <span>integer <var>$user_id</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Get failed login attempts login attempts</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Get failed login attempts login attempts</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$user_id</var></dt>
+					<dd><code>integer</code><br>$user_id</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>integer</code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="set_remember_me_cookie" id="_set_remember_me_cookie">
+
+		<td class="attributes"><code>
+			 public 
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_set_remember_me_cookie">#</a>
+		<code><a href="source-class-Auth_model.html#563-597" title="Go to source code">set_remember_me_cookie</a>( <span>(int) <var>$user_id</var> = <span class="php-keyword1">NULL</span></span>, <span>(int) <var>$expiration</var> = <span class="php-keyword1">NULL</span></span> )</code>
+
+		<div class="description short">
+			
+<p>Create remember me cookie</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Create remember me cookie</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$user_id</var></dt>
+					<dd><code>(int)</code><br>$user_id</dd>
+					<dt><var>$expiration</var></dt>
+					<dd><code>(int)</code><br>$expiration</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>boolean</code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="unset_remember_me_cookie" id="_unset_remember_me_cookie">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_unset_remember_me_cookie">#</a>
+		<code><a href="source-class-Auth_model.html#620-660" title="Go to source code">unset_remember_me_cookie</a>( <span>integer <var>$user_id</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Delete remember me cookie</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Delete remember me cookie</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$user_id</var></dt>
+					<dd><code>integer</code><br>$user_id</dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="send_verification_email" id="_send_verification_email">
+
+		<td class="attributes"><code>
+			 public 
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_send_verification_email">#</a>
+		<code><a href="source-class-Auth_model.html#694-746" title="Go to source code">send_verification_email</a>( <span>integer <var>$user_id</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Send activtion email</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Send activtion email</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$user_id</var></dt>
+					<dd><code>integer</code><br>$user_id The user id</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>boolean</code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="verify_email_verification_token" id="_verify_email_verification_token">
+
+		<td class="attributes"><code>
+			 public 
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_verify_email_verification_token">#</a>
+		<code><a href="source-class-Auth_model.html#766-804" title="Go to source code">verify_email_verification_token</a>( <span>integer <var>$user_id</var></span>, <span>string <var>$token</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Verify that the user clicked a valid verification email link.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Verify that the user clicked a valid verification email link.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$user_id</var></dt>
+					<dd><code>integer</code><br>$user_id</dd>
+					<dt><var>$token</var></dt>
+					<dd><code>string</code><br>$token</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>boolean</code><br>If the user has a valid token and expiration date, TRUE is returned. Otherwise,
+FALSE.<br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="reset_password" id="_reset_password">
+
+		<td class="attributes"><code>
+			 public 
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_reset_password">#</a>
+		<code><a href="source-class-Auth_model.html#806-824" title="Go to source code">reset_password</a>( <span>type <var>$user_id</var></span>, <span>type <var>$new_password</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Reset user password</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Reset user password</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$user_id</var></dt>
+					<dd><code>type</code><br>$user_id</dd>
+					<dt><var>$new_password</var></dt>
+					<dd><code>type</code><br>$new_password</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>boolean</code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="verify_password_reset_tk" id="_verify_password_reset_tk">
+
+		<td class="attributes"><code>
+			 public 
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_verify_password_reset_tk">#</a>
+		<code><a href="source-class-Auth_model.html#826-872" title="Go to source code">verify_password_reset_tk</a>( <span>string <var>$email</var></span>, <span>string <var>$token</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Verify that the provided password reset token is correct. Use this function
+if you are using the send_reset_password_email() fumction before calling the
+reset_password() function.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Verify that the provided password reset token is correct. Use this function
+if you are using the send_reset_password_email() fumction before calling the
+reset_password() function.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$email</var></dt>
+					<dd><code>string</code><br>$email</dd>
+					<dt><var>$token</var></dt>
+					<dd><code>string</code><br>$token</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>boolean</code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="send_reset_password_email" id="_send_reset_password_email">
+
+		<td class="attributes"><code>
+			 public 
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_send_reset_password_email">#</a>
+		<code><a href="source-class-Auth_model.html#874-936" title="Go to source code">send_reset_password_email</a>( <span>string <var>$email</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Send reset password email</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Send reset password email</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$email</var></dt>
+					<dd><code>string</code><br>$email</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>boolean</code><br>True if sending was successful | False otherwise<br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="email_exists" id="_email_exists">
+
+		<td class="attributes"><code>
+			 public 
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_email_exists">#</a>
+		<code><a href="source-class-Auth_model.html#938-952" title="Go to source code">email_exists</a>( <span>string <var>$email</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Check if email exists in database</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Check if email exists in database</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$email</var></dt>
+					<dd><code>string</code><br>$email</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>boolean</code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="set_user_group" id="_set_user_group">
+
+		<td class="attributes"><code>
+			 public 
+			integer
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_set_user_group">#</a>
+		<code><a href="source-class-Auth_model.html#954-967" title="Go to source code">set_user_group</a>( <span>type <var>$user_id</var></span>, <span>type <var>$group_id</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Make user a member of a group</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Make user a member of a group</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$user_id</var></dt>
+					<dd><code>type</code><br>$user_id</dd>
+					<dt><var>$group_id</var></dt>
+					<dd><code>type</code><br>$group_id</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>integer</code><br>affected rows<br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="add_privilege_to_user" id="_add_privilege_to_user">
+
+		<td class="attributes"><code>
+			 public 
+			mixed
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_add_privilege_to_user">#</a>
+		<code><a href="source-class-Auth_model.html#969-991" title="Go to source code">add_privilege_to_user</a>( <span>integer <var>$user_id</var></span>, <span>integer <var>$privilege_id</var></span> )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$user_id</var></dt>
+					<dd><code>integer</code><br>$user_id</dd>
+					<dt><var>$privilege_id</var></dt>
+					<dd><code>integer</code><br>$privilege_id</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>mixed</code><br>number of affected rows | FALSE if connection exisits previously<br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="create_group" id="_create_group">
+
+		<td class="attributes"><code>
+			 public 
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_create_group">#</a>
+		<code><a href="source-class-Auth_model.html#993-1018" title="Go to source code">create_group</a>( <span>string <var>$name</var></span>, <span>string <var>$description</var></span>, <span>boolean <var>$is_admin</var> = <span class="php-keyword1">FALSE</span></span> )</code>
+
+		<div class="description short">
+			
+<p>Create group</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Create group</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$name</var></dt>
+					<dd><code>string</code><br>$name</dd>
+					<dt><var>$description</var></dt>
+					<dd><code>string</code><br>$description</dd>
+					<dt><var>$is_admin</var></dt>
+					<dd><code>boolean</code><br>$is_admin</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>boolean</code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="create_priviledge" id="_create_priviledge">
+
+		<td class="attributes"><code>
+			 public 
+			integer
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_create_priviledge">#</a>
+		<code><a href="source-class-Auth_model.html#1020-1041" title="Go to source code">create_priviledge</a>( <span>string <var>$name</var></span>, <span>string <var>$description</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Create priviledge</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Create priviledge</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$name</var></dt>
+					<dd><code>string</code><br>$name</dd>
+					<dt><var>$description</var></dt>
+					<dd><code>string</code><br>$description</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>integer</code><br>privilege id<br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="connect_privilede_to_group" id="_connect_privilede_to_group">
+
+		<td class="attributes"><code>
+			 public 
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_connect_privilede_to_group">#</a>
+		<code><a href="source-class-Auth_model.html#1043-1076" title="Go to source code">connect_privilede_to_group</a>( <span>integer <var>$priviledge_id</var></span>, <span>integer <var>$group_id</var></span>, <span>boolean <var>$unique</var> = <span class="php-keyword1">TRUE</span></span> )</code>
+
+		<div class="description short">
+			
+<p>connect a priviledge to a group The param $unique is to test if the
+connection is unique before insertion</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>connect a priviledge to a group The param $unique is to test if the
+connection is unique before insertion</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$priviledge_id</var></dt>
+					<dd><code>integer</code><br>$priviledge_id</dd>
+					<dt><var>$group_id</var></dt>
+					<dd><code>integer</code><br>$group_id</dd>
+					<dt><var>$unique</var></dt>
+					<dd><code>boolean</code><br>$unique</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>boolean</code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="has_privilege" id="_has_privilege">
+
+		<td class="attributes"><code>
+			 public 
+			(mixed)
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_has_privilege">#</a>
+		<code><a href="source-class-Auth_model.html#1078-1099" title="Go to source code">has_privilege</a>( <span>integer <var>$privilege_id</var></span>, <span>integer <var>$user_id</var> = <span class="php-keyword1">NULL</span></span> )</code>
+
+		<div class="description short">
+			
+<p>Does user have privilege</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Does user have privilege</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$privilege_id</var></dt>
+					<dd><code>integer</code><br>$privilege_id</dd>
+					<dt><var>$user_id</var></dt>
+					<dd><code>integer</code><br>$user_id</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>(mixed)</code><br>False if connection exists | int number of rows affected on success<br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="in_group" id="_in_group">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_in_group">#</a>
+		<code><a href="source-class-Auth_model.html#1101-1122" title="Go to source code">in_group</a>( <span>integer <var>$group_id</var></span>, <span>integer <var>$user_id</var> = <span class="php-keyword1">NULL</span></span> )</code>
+
+		<div class="description short">
+			
+<p>Is user in group</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Is user in group</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$group_id</var></dt>
+					<dd><code>integer</code><br>$group_id Must provide the group id</dd>
+					<dt><var>$user_id</var></dt>
+					<dd><code>integer</code><br>$user_id Leave null if checking current logged in user</dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="list_groups" id="_list_groups">
+
+		<td class="attributes"><code>
+			 public 
+			object
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_list_groups">#</a>
+		<code><a href="source-class-Auth_model.html#1124-1144" title="Go to source code">list_groups</a>( )</code>
+
+		<div class="description short">
+			
+<p>list all groups</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>list all groups</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>object</code><br>If no groups found the function will return null. If groups were found the
+object structure will be as follows: $obj-&gt;group_id $obj-&gt;name
+$obj-&gt;description<br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="list_privileges" id="_list_privileges">
+
+		<td class="attributes"><code>
+			 public 
+			object
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_list_privileges">#</a>
+		<code><a href="source-class-Auth_model.html#1146-1165" title="Go to source code">list_privileges</a>( )</code>
+
+		<div class="description short">
+			
+<p>List all privileges</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>List all privileges</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>object</code><br>If no privileges found the function will return null. If privileges were found
+the object structure will be as follows: $obj-&gt;privilege_id $obj-&gt;name
+$obj-&gt;description<br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="list_groups_privileges" id="_list_groups_privileges">
+
+		<td class="attributes"><code>
+			 public 
+			(object)
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_list_groups_privileges">#</a>
+		<code><a href="source-class-Auth_model.html#1167-1199" title="Go to source code">list_groups_privileges</a>( )</code>
+
+		<div class="description short">
+			
+<p>list groups and their connected priviliges</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>list groups and their connected priviliges</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>(object)</code><br>If no connections found the function will return null. If connections were found
+the object structure will be as follows: $obj-&gt;group_id $obj-&gt;privilege_id
+$obj-&gt;group_name $obj-&gt;privilege_name $obj-&gt;group_description
+$obj-&gt;privilege_description<br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="user_group" id="_user_group">
+
+		<td class="attributes"><code>
+			 public 
+			object
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_user_group">#</a>
+		<code><a href="source-class-Auth_model.html#1201-1238" title="Go to source code">user_group</a>( <span>integer <var>$user_id</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Get the group of a user</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Get the group of a user</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$user_id</var></dt>
+					<dd><code>integer</code><br>$user_id The user id</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>object</code><br>If group found, an object of the following structure is returned.
+$obj-&gt;group_id $obj-&gt;name $obj-&gt;description Otherwise, (bool) FALSE is
+returned<br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="list_user_privilege" id="_list_user_privilege">
+
+		<td class="attributes"><code>
+			 public 
+			object
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_list_user_privilege">#</a>
+		<code><a href="source-class-Auth_model.html#1240-1263" title="Go to source code">list_user_privilege</a>( <span>integer <var>$user_id</var></span> )</code>
+
+		<div class="description short">
+			
+<p>List the privileges a user is connected to</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>List the privileges a user is connected to</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$user_id</var></dt>
+					<dd><code>integer</code><br>$user_id</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>object</code><br>If the user has privileges an object of the following structure is returned.
+$obj-&gt;privilege_id $obj-&gt;privilage_name $obj-&gt;privilage_description
+Otherwise, (bool) FALSE is returned<br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="status_messages" id="_status_messages">
+
+		<td class="attributes"><code>
+			 public 
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_status_messages">#</a>
+		<code><a href="source-class-Auth_model.html#1265-1282" title="Go to source code">status_messages</a>( <span>string <var>$prefix</var> = <span class="php-quote">&quot;&lt;p&gt;&quot;</span></span>, <span>string <var>$suffix</var> = <span class="php-quote">&quot;&lt;/p&gt;&quot;</span></span> )</code>
+
+		<div class="description short">
+			
+<p>Get status messages</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Get status messages</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$prefix</var></dt>
+					<dd><code>string</code><br>$prefix HTML opening tag</dd>
+					<dt><var>$suffix</var></dt>
+					<dd><code>string</code><br>$suffix HTML closing tag</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>string</code><br>holding the status messages<br />
+					<code>string</code><br>Status message(s)<br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="error_messages" id="_error_messages">
+
+		<td class="attributes"><code>
+			 public 
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_error_messages">#</a>
+		<code><a href="source-class-Auth_model.html#1284-1301" title="Go to source code">error_messages</a>( <span>string <var>$prefix</var> = <span class="php-quote">&quot;&lt;p&gt;&quot;</span></span>, <span>string <var>$suffix</var> = <span class="php-quote">&quot;&lt;/p&gt;&quot;</span></span> )</code>
+
+		<div class="description short">
+			
+<p>Get error messages</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Get error messages</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$prefix</var></dt>
+					<dd><code>string</code><br>$prefix HTML opening tag</dd>
+					<dt><var>$suffix</var></dt>
+					<dd><code>string</code><br>$suffix HTML closing tag</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>string</code><br>holding the error messages<br />
+					<code>string</code><br>Error message(s)<br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="set_error_message" id="_set_error_message">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_set_error_message">#</a>
+		<code><a href="source-class-Auth_model.html#1303-1322" title="Go to source code">set_error_message</a>( <span>string <var>$message</var></span>, <span>mixed <var>$sprintf</var> = <span class="php-keyword1">NULL</span></span> )</code>
+
+		<div class="description short">
+			
+<p>Adds an error message</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Adds an error message</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$message</var></dt>
+					<dd><code>string</code><br>$message Has to be a key in the language file</dd>
+					<dt><var>$sprintf</var></dt>
+					<dd><code>mixed</code><br>$sprintf If the message requires the sprintf function, pass an array of what
+parameters to give the sprintf or vsprintd</dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="set_status_message" id="_set_status_message">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_set_status_message">#</a>
+		<code><a href="source-class-Auth_model.html#1324-1342" title="Go to source code">set_status_message</a>( <span>string <var>$message</var></span>, <span>mixed <var>$sprintf</var> = <span class="php-keyword1">NULL</span></span> )</code>
+
+		<div class="description short">
+			
+<p>Adds an status message</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Adds an status message</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$message</var></dt>
+					<dd><code>string</code><br>$message Has to be a key in the language file</dd>
+					<dt><var>$sprintf</var></dt>
+					<dd><code>mixed</code><br>$sprintf If the message requires the sprintf function, pass an array of what
+parameters to give the sprintf or vsprintd</dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="reset_messages" id="_reset_messages">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_reset_messages">#</a>
+		<code><a href="source-class-Auth_model.html#1344-1352" title="Go to source code">reset_messages</a>( )</code>
+
+		<div class="description short">
+			
+<p>Reset error and status messages</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Reset error and status messages</p>
+
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="install" id="_install">
+
+		<td class="attributes"><code>
+			 public 
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_install">#</a>
+		<code><a href="source-class-Auth_model.html#1371-1507" title="Go to source code">install</a>( )</code>
+
+		<div class="description short">
+			
+<hr />
+
+<h1>Install Library</h1>
+This function should be used only once. It inserts initial data to the DB. The
+values are the following:
+<ul>
+	<li>Groups:
+		<ul>
+			<li>name: admin</li>
+
+			<li>description: controls website content and members</li>
+
+			<li>name: user</li>
+
+			<li>description: a website public member</li>
+		</ul>
+	</li>
+
+	<li>Privileges:
+		<ul>
+			<li>Admin group privileges:
+				<ul>
+					<li>name: Edit profiles</li>
+
+					<li>description: Edit user profiles</li>
+
+					<li>name: Add account</li>
+
+					<li>description: Add new admin or user</li>
+
+					<li>name: Add group</li>
+
+					<li>description: Add new group and privileges</li>
+
+					<li>name: Edit group</li>
+
+					<li>description: Edit groups and privileges</li>
+
+					<li>name: Connect groups</li>
+
+					<li>description: Connect user to groups and priviliges</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+
+	<li>Account:
+		<ul>
+			<li>email: <a
+			href="mailto:admin&#64;example.com">admin&#64;<!---->example.com</a></li>
+
+			<li>password: demo_password</li>
+
+			<li>group: admin</li>
+		</ul>
+
+		<ul>
+			<li>email: <a
+			href="mailto:user&#64;emaple.com">user&#64;<!---->emaple.com</a></li>
+
+			<li>password: demo_password</li>
+
+			<li>group: user</li>
+		</ul>
+	</li>
+</ul>
+
+<p>The function connects the privileges to the group admin <b>Note:</b> You must
+use the SQL_dump file first before using this function</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<hr />
+
+<h1>Install Library</h1>
+This function should be used only once. It inserts initial data to the DB. The
+values are the following:
+<ul>
+	<li>Groups:
+		<ul>
+			<li>name: admin</li>
+
+			<li>description: controls website content and members</li>
+
+			<li>name: user</li>
+
+			<li>description: a website public member</li>
+		</ul>
+	</li>
+
+	<li>Privileges:
+		<ul>
+			<li>Admin group privileges:
+				<ul>
+					<li>name: Edit profiles</li>
+
+					<li>description: Edit user profiles</li>
+
+					<li>name: Add account</li>
+
+					<li>description: Add new admin or user</li>
+
+					<li>name: Add group</li>
+
+					<li>description: Add new group and privileges</li>
+
+					<li>name: Edit group</li>
+
+					<li>description: Edit groups and privileges</li>
+
+					<li>name: Connect groups</li>
+
+					<li>description: Connect user to groups and priviliges</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+
+	<li>Account:
+		<ul>
+			<li>email: <a
+			href="mailto:admin&#64;example.com">admin&#64;<!---->example.com</a></li>
+
+			<li>password: demo_password</li>
+
+			<li>group: admin</li>
+		</ul>
+
+		<ul>
+			<li>email: <a
+			href="mailto:user&#64;emaple.com">user&#64;<!---->emaple.com</a></li>
+
+			<li>password: demo_password</li>
+
+			<li>group: user</li>
+		</ul>
+	</li>
+</ul>
+
+<p>The function connects the privileges to the group admin <b>Note:</b> You must
+use the SQL_dump file first before using this function</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>boolean</code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+	<div id="footer">
+		 API documentation generated by <a href="http://apigen.org">ApiGen 2.8.0</a>
+	</div>
+</div>
+</div>
+</body>
+</html>
