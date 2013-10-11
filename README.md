@@ -47,11 +47,11 @@ To create an account simply use the create_account() function. Example:
 ```PHP
 $user_id = $this->auth_model->create_account($email, $password);
 ```
-You can add customized data to the accounts table such as phone and name. Then you can use the 4th parameter of the create_account() function to add custom data to your table. Example:
+You can add customized columns to the accounts table such as phone and name. Then you can use the 4th parameter of the create_account() function to add custom data to your table. Example:
 ```PHP
 $custom_data = array(
 					"name"  => "Foo Bar",
-					"phone" => "555-555-5555'
+					"phone" => "555-555-5555"
 				);
 $user_id = $this->auth_model->create_account($email, $password, NULL, $custom_data);
 ```
