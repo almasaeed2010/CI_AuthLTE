@@ -65,4 +65,46 @@ $this->auth_model->login($email, $password, $remember_me = FALSE);
 ```
 The function will return (bool) TRUE on success. False otherwise.
 
+**Checking If the User is Logged in**
+```PHP
+var_dump($this->auth_model->is_logged_in());
+```
+
+**Get Current User ID **
+```PHP
+$user_id = $this->auth_model->user_id();
+```
+
+**Getting and Setting Error and Status Messages**
+
+The error and status messages are stored in the language file included with the library. 
+To set a customized message, add your message to the language file.
+For example:
+```PHP
+$lang['auth.custom_error'] = 'The fields %s and %s are invalid!';
+$lang['auth.email_field'] = 'Email';
+$lang['auth.password_field'] = 'Password';
+```
+Then use the set_error_message() or set_status_message() by passing the $lang key to the function.
+The second param is optional and used to pass data to the sprintf function. For example:
+```PHP
+$this->auth_model->set_error_message('auth.custom_error');
+//Or using the second param
+$this->auth_model->set_error_message('auth.custom_error', lang('auth.email_field'));
+//You can also pass an array as a second paramater.
+$sprintf = array(
+				lang('auth.email_field'),
+				lang('auth.password_field')
+			);
+$this->auth_model->set_error_message('auth.custom_error', $sprintf);
+//Similarly, you can use the set_status_messages()
+```
+
+To retrieve a message, use error_messages() or status_messages(). For example:
+```PHP
+//You can choose the opening and closing tags for each message (line)
+//Returned value: <p>first error</p><p>second error</p> ... and so on
+$errors = $this->auth_model->error_messages('<p>', '</p>');
+```
+
 For a full list of the library's functions, download the *CI_AuthLTE_documentation* folder and open the index.html file.
