@@ -70,7 +70,7 @@ The function will return (bool) TRUE on success. False otherwise.
 var_dump($this->auth_model->is_logged_in());
 ```
 
-**Get Current User ID **
+**Get Current User ID**
 ```PHP
 $user_id = $this->auth_model->user_id();
 ```
