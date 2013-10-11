@@ -65,4 +65,4 @@ $this->auth_model->login($email, $password, $remember_me = FALSE);
 ```
 The function will return (bool) TRUE on success. False otherwise.
 
-For a full list of the library's functions, download the [CI_AuthLTE_documentation](../CI_AuthLTE_documentation) folder and open then index.html file.
+For a full list of the library's functions, download the *CI_AuthLTE_documentation* folder and open then index.html file.
