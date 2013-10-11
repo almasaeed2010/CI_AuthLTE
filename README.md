@@ -36,7 +36,7 @@ Documentation
 Add the files to the corresponding directories. Then, dump the sql file to your database.
 Open the auth_model.php file which is located in the Application/models directory. Make sure to edit the settings to match your desire.
 
-Load the model using Codeigniter's load function in your controller:
+To initialize the library, load the model using Codeigniter's load function in your controller:
 ```PHP
 $this->load->model('auth_model');
 ```
@@ -64,3 +64,5 @@ Log a user in using the login() function. Example:
 $this->auth_model->login($email, $password, $remember_me = FALSE);
 ```
 The function will return (bool) TRUE on success. False otherwise.
+
+For a full list of the library's functions, download the [CI_AuthLTE_documentation](../CI_AuthLTE_documentation) folder and open then index.html file.
