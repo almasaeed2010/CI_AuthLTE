@@ -29,7 +29,7 @@ Main Features
  
  7- Simple database structure
 
-Documentation
+Quick Start
 =============
 **Installation:**
 
