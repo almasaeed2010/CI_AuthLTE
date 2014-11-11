@@ -4,7 +4,7 @@ if (!defined('BASEPATH'))
     exit('No direct script access allowed');
 
 /**
- * @Author Abdullah A Almsaeed <almasaeed2010@hotmail.com>
+ * @Author Abdullah A Almsaeed <abdullah@almsaeedstudio.com>
  * @Date Sep 23, 2013
  * @link https://github.com/almasaeed2010/CI_AuthLTE Documentation and download link
  * @version v0.1.0
